@@ -5,15 +5,15 @@
 #
 # 2) Uncomment the following line.
 #
-#DUMMY_OBJ = AIDummy.o
+DUMMY_OBJ = AIDummy.o
 
 # Add here any extra .o player files you want to link to the executable
-EXTRA_OBJS =
+EXTRA_OBJS = AICurrent.o
 
 # Config
 OPTIMIZE = 2 # Optimization level (0 to 3)
-DEBUG	 = 0 # Compile for debugging (0 or 1)
-PROFILE	 = 0 # Compile for profile (0 or 1)
+DEBUG	 = 1 # Compile for debugging (0 or 1)
+PROFILE	 = 1 # Compile for profile (0 or 1)
 32BITS	 = 0 # Produce 32 bits objects on 64 bits systems (0 or 1)
 
 
