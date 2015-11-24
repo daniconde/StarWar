@@ -1,6 +1,9 @@
 
 #include "Player.hh"
-
+#include <vector>
+#include <stack>
+#include <queue>
+#include <pair>
 using namespace std;
 
 
@@ -24,25 +27,45 @@ struct PLAYER_NAME : public Player {
     static Player* factory () {
         return new PLAYER_NAME;
     }
-    
 
+
+    int n_rocket_plus;
+    int n_coins;
+    int n_players;
+    complex<int> map_dimensions;
+    complex<int> win_dimensions;
+    map<int, bool> map_registry;
     /**
      * Attributes for your player can be defined here.
-     */     
+     */
 
+    void read_map(){
+        for (int i = 0; i < map_dimensions.first){
+            for (int j = 0; j < map_dimensions.second){
+                complex<int, int> position = {i, j};
+            }
+        }
+    }
 
+    void initialize_game(){
+        n_players = number_players;
+        map_dimensions = {number_rows(), number_universe_columns()};
+        win_dimensions = {first(map_dimensions), number_window_columns()};
+        read_map();
+    }
     /**
      * Play method.
-     * 
+     *
      * This method will be invoked once per each round.
      * You have to read the board here to place your actions
      * for this round.
      *
-     */     
+     */
     virtual void play () {
+        if (round() == 0) initialize_game();
     }
 
-    
+
 };
 
 
