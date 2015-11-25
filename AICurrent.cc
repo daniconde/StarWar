@@ -56,8 +56,9 @@ struct TacticalCell{
 
     //Auxiliary values for starship pathing
     int distance;
+    int mis_left;
+    int round_upd;
     Starship_Id updater;
-    int round;
 };
 
 
@@ -106,8 +107,40 @@ virtual void play () {
     }
 }
 
+//Aux function used to update cells on the tactical map
+void updt_tcell(TacticalCell &tcell, const Starship_Id sid, const int mis, const int round, const int distance){
+    tcell.updater = ship.sid;
+    tcell.round_upd = round;
+    tcell.distance = distance;
+    tcell.mis_left = mis;
+}
+
 Mission get_mission(Starship_Id sid){
-    Pos pos =
+    Starship ship = starship(sid);
+    Pos pos_s = ship.pos;
+    updt_tcell(tactical_map[first(pos_s)][second(pos_s)], ship.nb_miss, sid, myround, 0);
+    TacticalCell
+
+    Pos pos_a;
+    Cell cell_a;
+    TacticalCell *tcell_a;
+
+    queue<pos> next_pos;
+    cell.push(pos_s);
+    int r = 1;
+
+    while (not next_pos.empty()){
+        pos_s = next_pos.front();
+        next_pos.pop();
+        if (ship.)
+        pos_a = pos_s + DEFAULT;
+        cell_a = cell(pos_a);
+        tcell_a = &tactical_map[first(pos_a)][second(pos_a)];
+
+        if (cell_a.type == ASTEROID){
+
+        }
+    }
 }
 
 void initialize_game(){
