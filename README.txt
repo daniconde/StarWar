@@ -1,9 +1,1 @@
-Hello git
-title:      StarWar
-
-author(s):  Enric Rodríguez
-
-
-contact:    erodri@cs.upc.edu
-
-(c) Universitat Politècnica de Catalunya, 2015
+AI Project for the EDA subject at Universitat Politècnica de Catalunya
